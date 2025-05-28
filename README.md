@@ -13,7 +13,7 @@ This is a Chrome extension that allows users to manage and log in using Discord 
 1. **Download the Repository**
    - Clone the repository or download it as a ZIP file.
      ```bash
-     git clone https://github.com/zexty00/discord-token-login-extension.git
+     git clone https://github.com/zexty00/Discord-Token-Login.git
      ```
 
 2. **Extract Files**
