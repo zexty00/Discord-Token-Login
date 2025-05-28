@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'SF Pro Display', Arial, sans-serif;
+    background-color: #2c2f33;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+}
+
+.container {
+    text-align: center;
+    background-color: #0f0f0f;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    text-wrap: 80%;
+    background-color: #272727;
+    padding: 10px 20px;
+    color: #ffffff;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    user-select: text;
+}
+
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 24px;
+    background-color: #272727;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+.credits {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 100;
+    color: #b0b0b0;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.4s ease-out;
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #272727;
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    font-weight: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.notification.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+}
+
+.notification.success {
+    background: linear-gradient(90deg, #254b26, #2b2b2b);
+}
+
+.notification.error {
+    background: linear-gradient(90deg, #42211e, #161616);
+}
+
+.token-list {
+    max-height: 150px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    background-color: #0f0f0f;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.token-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.token-list::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 4px;
+}
+
+.token-list::-webkit-scrollbar-thumb:hover {
+    background-color: #3a3a3a;
+}
+
+.token-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #24242491;
+    justify-items: center;
+    display: flex;
+    margin-bottom: 0.15rem;
+    cursor: pointer;
+    color: #ffffff98;
+}
+
+.token-list li:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.token-list li button {
+    background-color: #42211e;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.token-list li button:hover {
+    background-color: #ff4d4d62;
+    transition: all 0.3s ease;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: rgb(15, 15, 15);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease;
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 24px;
+    background-color: #272727;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+#loginButton {
+    display: block;
+    margin: 0 auto;
+}

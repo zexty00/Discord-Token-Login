@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Token Login</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Discord Token Login</h1>
+            <div class="input-wrapper">
+                <input type="text" id="tokenInput" placeholder="Wpisz token discord...">
+            </div>
+            <button id="loginButton">Zaloguj</button>
+
+            <div class="input-wrapper" style="margin-top: 2rem; display: flex; align-items: center;">
+                <input type="text" id="saveTokenInput" placeholder="Wpisz token...">
+                <button id="saveTokenButton" style="margin-left: 10px; margin-top: -1.1rem;">Dodaj</button>
+            </div>
+
+            <ul id="tokenList" class="token-list"></ul>
+            <div id="modal" class="modal hidden">
+                <div class="modal-content">
+                    <p>Czy na pewno chcesz usunąć ten token?</p>
+                    <button id="confirmDeleteButton">Tak</button>
+                    <button id="cancelDeleteButton">Nie</button>
+                </div>
+            </div>
+            <div class="credits">Discord Token Login by zexty00</div>
+        </div>
+        <div id="notification" class="notification hidden"></div>
+        <script src="popup.js"></script>
+    </body>
+</html>
